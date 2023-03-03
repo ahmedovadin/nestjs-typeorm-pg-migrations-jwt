@@ -11,8 +11,6 @@ export class AuthController {
     constructor(private authService: AuthService){}
 
     @ApiOperation({summary: `/Авторизация`})
-    @ApiResponse({status: 200, type: User})
-    // @UsePipes(ValidationPipe)
     @Post('/login')
     login(@Body() userDto: CreateUserDto){
         return this.authService.login(userDto)
